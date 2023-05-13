@@ -5,20 +5,31 @@
         <meta charset="utf=8">
         <style>
             table, tr, th, td {
-                border: solid 1px black;
+                border: solid 4px black;
                 border-collapse: collapse;
                 padding: 8px;
             }
+            .hwang{ background-color: #ffc1bd;}
+            .min { background-color: #fff07d;}
+            .hyun{ background-color: #a1deff;}
         </style>
+        <script>
+        function changecolor() {
+            e=document.getElementById('test')
+            e.style.color ='#fcba03';
+        }
+        </script>
     </head>
     <body>
-        <h3>
+        <h3 id="test">
              환영합니다! 20220322 강예인의 홈페이지입니다. 
         </h3>
+        <button onclick="changecolor()" type="button">강예인이(가) 색깔 바꾸기 기술을 사용하였다!</button>
 
 
 
-        <h3> 강예인의 시간표 </h3>
+        <h3 onmouseover="this.style.color='pink';" 
+        onmouseout="this.style.color='balck';"> 강예인의 시간표 </h3>
 
         <table>
             
@@ -26,15 +37,15 @@
             <tr>
 
                 <th> <img src="시간표.png" width="30">시간/요일</th> 
-                <th>월</th>
-                <th>화</th>
-                <th>수</th>
-                <th>목</th>
-                <th>금</th>
-                <th>토</th>
+                <th class="hwang">월</th>
+                <th class="hwang">화</th>
+                <th class="hwang">수</th>
+                <th class="hwang">목</th>
+                <th class="hwang">금</th>
+                <th class="hwang">토</th>
             </tr>
             <tr>
-                <td>1교시</td>
+                <td class="min">1교시</td>
                 <td><br></td>
                 <td><br></td>
                 <td><br></td>
@@ -43,28 +54,28 @@
                 <td><br></td>
             </tr>
             <tr>
-                <td>2교시</td>
+                <td class="min">2교시</td>
                 <td rowspan="2" 초급생활독일어>초급생활독일어</td>
                 <td><br></td>
                 <td><br></td>
                 <td>디지털콘텐츠비즈니스개론</td>
-                <td rowspan="2" 웹프로그래밍>웹프로그래밍</td>
+                <td class="hyun" rowspan="2" 웹프로그래밍><strong>웹프로그래밍</strong></td>
                 <td><br></td>
             </tr>
             <tr>
-                <td>3교시</td>
+                <td class="min">3교시</td>
                 <td rowspan="2" 디지털콘텐츠비즈니스개론>디지털콘텐츠비즈니스개론</td>
                 <td rowspan="2" 경영정보시스템>경영정보시스템</td>
                 <td rowspan="2" 대학영어회화>대학영어회화2</td>
                 <td><br></td>
             </tr>
             <tr>
-                <td>4교시</td>
+                <td class="min">4교시</td>
                 <td><br></td>
                 <td><br></td>
             </tr>
             <tr>
-                <td>5교시</td>
+                <td class="min">5교시</td>
                 <td>경영정보시스템</td>
                 <td rowspan="2" 문화산업의이해>문화산업의이해</td>
                 <td><br></td>
@@ -73,14 +84,14 @@
                 <td>문화산업의이해</td>
             </tr>
             <tr>
-                <td>6교시</td>
+                <td class="min">6교시</td>
                 <td><br></td>
                 <td>채플</td>
                 <td><br></td>
                 <td><br></td>
              </tr>
              <tr>
-                <td>7교시</td>
+                <td class="min">7교시</td>
                 <td><br></td>
                 <td><br></td>
                 <td><br></td>
@@ -88,11 +99,11 @@
                 <td><br></td>
              </tr>
              <tr>
-                <td>8교시</td>
+                <td class="min">8교시</td>
                 <td><br></td>
                 <td><br></td>
                 <td><br></td>
-                <td>웹프로그래밍</td>
+                <td class="hyun"><strong>웹프로그래밍</strngo></td>
                 <td><br></td>
              </tr>
 
@@ -100,6 +111,8 @@
     </target>
 
    <a href="회원가입.html"><h3>회원가입</h3></a>
+ <hr>
+ <img onmouseout="this.style.width='100px'" img onmouseover="this.style.width='200px'"src="https://i.pinimg.com/736x/41/71/3b/41713bd2f5d2880848ad1c7c641f282b.jpg" width="100px">
  <hr>
     <br>
     <a href="루바토펜션.html">루바토 펜션 안내</a>
