@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+ * {
+ font-family:  'PyeongChangPeace-Bold';
+ box-sizing: border-box;
+ background-color: #ffc9d1;
+            }
+
+            .sidebar {
+            height: 100%;
+            width: 0px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #ffc9d1;
+            overflow-x: hidden;
+            transition: 0.4s;/*펼침속도*/
+            padding-top: 60px;
+            }
+
+            .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #392929;
+            display: block;
+            transition: 0.3s;
+            }
+
+            /*메뉴열기 hover 시*/
+            .sidebar a:hover {
+            color: #f1f1f1;
+            }
+
+
+            .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+            }
+
+            .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #ffc9d1;
+            color: black;
+            padding: 10px 15px;
+            border: none;
+            }
+
+            .openbtn:hover {
+            background-color: #ffc9d1;
+            }
+
+            #main {
+            transition: margin-left 0.4s;
+            padding: 16px;
+            }
+
+            .h2 {
+              
+              margin-bottom: -10px;
+              padding-top: 20px;
+              display: block;
+              text-align: center;   
+              font-size: 65px;           
+            }
+            
+            .h3 {
+                float:inline-end;
+                display: block;
+                
+            }
+            hr {
+                height: 3px;
+                background-color:black;
+            }
+            
+            .section input [id="slide"] {
+                display: none;
+            }
+
+            .section .slidewrap {
+                max-width: 700px;
+                margin: 0 auto;
+                overflow: hidden;
+            }
+
+            .section .slidelist {
+                white-space: nowrap;
+                font-size: 0;
+            }
+
+            .section  .slidelist > li {
+                display: inline-block;
+                vertical-align: middle;
+                width: 100%;
+                transition: all .5s;
+            } 
+
+            .section .slidelist > li > a {
+                display: block;
+                position:relative;
+            }
+
+            .section .slidelist > li > a img {
+                width: 100%;
+            }
+            
+            .section .slidelist label {
+                position: absolute;
+                z-index: 1;
+                top: 50%;
+                transform: translateY(-50%);
+                padding: 50px;
+                cursor:pointer;
+            }
+
+            .section .slidelist .left {
+                left: 30px; 
+                margin-top: 220px;
+                background:url(https://cdn-icons-png.flaticon.com/512/54/54782.png) center center / 70% no-repeat ;
+            }
+
+
+            .section .slidelist .right {
+                right: 30px; 
+                background:url(https://cdn-icons-png.flaticon.com/512/271/271228.png) center center / 70% no-repeat ;
+            }
+
+            .section [id="slide01" ]:checked ~ .slidewrap .slidelist > li {transform: translateX(0%);}
+            .section [id="slide02" ]:checked ~ .slidewrap .slidelist > li {transform: translateX(-100%);}
+            .section [id="slide03" ]:checked ~ .slidewrap .slidelist > li {transform: translateX(-200%);}
+
+            .slide-pagelist {text-align:center;padding:20px;}
+	.slide-pagelist > li {display:inline-block;vertical-align:middle;}
+	.slide-pagelist > li > label {display:block;padding:8px 30px;border-radius:30px;background:#eb949f;margin:20px 10px;cursor:pointer;}
+	.section input[id="slide01"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(1) > label {background:#e37b88;}
+	.section input[id="slide02"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(2) > label {background:#e37b88;}
+	.section input[id="slide03"]:checked ~ .slidewrap .slide-pagelist > li:nth-child(3) > label {background:#e37b88;}
+
+
+    [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+        }
+
+.p2 {
+
+    text-align: center;
+    font-size: 50px;
+    display: block;
+}
+  .p1 {
+    text-align: center;
+    font-size: 50px;
+    
+  }      
+  
+  .p3{
+    text-align: center;
+  }
+
+  .p4 {
+    text-align: center;
+    font-size: 50px;
+
+  }
+  .table1 {
+    width:700px;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto; 
+  }
+
+  table, tr, th, td {
+                border: solid 4px black;
+                border-collapse: collapse;
+                padding: 8px;
+            }
+            .hwang{ background-color: #ffc1bd;}
+            .min { background-color: #fff07d;}
+            .hyun{ background-color: #a1deff;}
+
+            header {
+                margin-top: 30px;
+        height: 90px;
+        background-color: #eb949f;
+        color:white;
+        text-align: center;
+        font-size: 25px;
+        border-radius: 30px;
+
+      }
+
+      #wrap {
+        height: 200px;
+      }
+
+      footer {
+        margin-top: 700px;
+        height: 80px;
+        background-color: #eb949f;
+        color:white;
+        font-size: 10px;
+        text-align: center;
+        border-radius: 30px;
+      }
+
+      .hr1 {
+        height: 5px;
+        background-color: #e37b88;
+        width: 1200px;
+        border: 0;
+        
+      }
+
+      .music1 {
+        font-size: 30px;
+      }
+            @font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+        </style>
+              <title>Yein Homepage </title>
+
+    </head>
+    <body>
+            <h2 class="h2"><span style="border-bottom: 12px solid #eb949f; padding: 0 0 0 0.2em;">Yein's Homepage</span></h2>
+
+
+            
+        
+
+        
+        <div class="sidebar" >
+            <a class="closebtn" onclick="closeMenu()">×</a>
+            <a href="루바토펜션.html">루바토 펜션</a>
+            <a href="호서국제페스티벌.html">페스티벌</a>
+            <a href="야간개장.html">야간개장</a>
+            <a href="세일 안내장.html">세일 안내장</a>
+            <a href="월간일정표.html">월간 일정표</a>
+            <a href="개인쇼핑몰.html">쇼핑몰</a>
+            <a href="회원가입.html">회원가입</a>
+        </div>
+        
+    
+        <div id="main">
+            <button class="openbtn" onclick="openMenu()">
+            ☰ 
+            </button>  
+
+            <header><br>강예인의 홈페이지에 오신 것을 환영합니다 !</header>
+          
+            
+
+       <p class="p2">Favorite</p>
+       <p class="p3">사진을 클릭해보세요!</p>
+
+
+       <div class="section">
+        <input type="radio" name="slide" id="slide01" checked>
+        <input type="radio" name="slide" id="slide02">
+        <input type="radio" name="slide" id="slide03">
+
+        <div class="slidewrap">
+            <ul class="slidelist">
+                <li>
+                    <a>
+                        <label for="slide03" class="left"></label>
+                        <a href="https://www.youtube.com/watch?v=ojGSXehtu6k"><img src="https://pbs.twimg.com/media/EdOUxg7UMAAU4mB?format=jpg&name=4096x4096"></a>
+                        <label for="slide02" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide01" class="left"></label>
+                        <a href="https://www.youtube.com/watch?v=-cYiGmfTVs0">
+                        <img src="https://pbs.twimg.com/media/FAsY8G1UYAA26H9?format=jpg&name=large"></a>
+                        <label for="slide03" class="right"></label>
+                    </a>
+                </li>
+                <li>
+                    <a>
+                        <label for="slide02" class="left"></label>
+                        <a href="https://www.youtube.com/watch?v=Ip35RHd-l5A">
+                        <img src="https://pbs.twimg.com/media/EOksDyMVAAAkJGn?format=jpg&name=4096x4096"></a>
+                        <label for="slide01" class="right"></label>
+                    </a>
+                </li>
+            </ul>
+
+
+		
+		<ul class="slide-pagelist">
+			<li><label for="slide01"></label></li>
+			<li><label for="slide02"></label></li>
+			<li><label for="slide03"></label></li>
+		</ul>
+        </div>
+       </div>
+
+       <br>
+       <br>
+
+       <p class="p1">Timeline</p>
+
+       <table class="table1">
+            
+
+        <tr>
+
+            <th> <img src="시간표.png" width="30">시간/요일</th> 
+            <th class="hwang">월</th>
+            <th class="hwang">화</th>
+            <th class="hwang">수</th>
+            <th class="hwang">목</th>
+            <th class="hwang">금</th>
+            <th class="hwang">토</th>
+        </tr>
+        <tr>
+            <td class="min">1교시</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td class="min">2교시</td>
+            <td rowspan="2" 초급생활독일어>초급생활독일어</td>
+            <td><br></td>
+            <td><br></td>
+            <td>디지털콘텐츠비즈니스개론</td>
+            <td class="hyun" rowspan="2" 웹프로그래밍><strong>웹프로그래밍</strong></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td class="min">3교시</td>
+            <td rowspan="2" 디지털콘텐츠비즈니스개론>디지털콘텐츠비즈니스개론</td>
+            <td rowspan="2" 경영정보시스템>경영정보시스템</td>
+            <td rowspan="2" 대학영어회화>대학영어회화2</td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td class="min">4교시</td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td class="min">5교시</td>
+            <td>경영정보시스템</td>
+            <td rowspan="2" 문화산업의이해>문화산업의이해</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td>문화산업의이해</td>
+        </tr>
+        <tr>
+            <td class="min">6교시</td>
+            <td><br></td>
+            <td>채플</td>
+            <td><br></td>
+            <td><br></td>
+         </tr>
+         <tr>
+            <td class="min">7교시</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+         </tr>
+         <tr>
+            <td class="min">8교시</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td class="hyun"><strong>웹프로그래밍</strngo></td>
+            <td><br></td>
+         </tr>
+
+        </table>
+        <br>
+        <br>
+        <br>
+       <hr class="hr1">
+
+       <p class="p4">♪오늘의 추천곡♪</p>
+
+       <br>
+       <br>
+
+<div>
+       <div style="float: left;">
+       <img src="https://www.akbobada.com/home/akbobada/archive/akbo/img/202303171046056.jpg" width="300px">
+       </div>
+       <div class="music1">
+        &nbsp; &nbsp; &nbsp;황민현 - SMile
+        <br>
+        <br>
+
+        &nbsp;&nbsp;&nbsp;<audio src="smile.mp3" controls></audio>
+       </div>
+    </div>
+
+
+       
+       
+       
+       
+       
+       
+        <footer>
+        <br>
+            Yein1412 Github <br>
+            nct127babo@gmail.com <br>
+            'With great power conmes great responsibility'
+        </footer>
+
+       
+       <script>
+            function openMenu() {
+                document.getElementById("main").style.marginLeft = "250px";
+                document.querySelector('.sidebar').style.width = "250px";
+                document.querySelector('.openbtn').style.display = 'none';
+            }
+
+            function closeMenu() { 
+                document.getElementById("main").style.marginLeft= "0";
+                document.querySelector('.sidebar').style.width = "0";
+                document.querySelector('.openbtn').style.display = 'block';
+            }
+            const search = document.querySelector(".search");
+const btn = document.querySelector(".btn");
+const input = document.querySelector(".input");
+
+
+        </script>
+    </body>
+</html>
